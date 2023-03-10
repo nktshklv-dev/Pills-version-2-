@@ -20,6 +20,7 @@
 		118328F829BA8D8F00C61B99 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118328F729BA8D8F00C61B99 /* Pill.swift */; };
 		11A721C629BBCC64005C7B29 /* InfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A721C529BBCC64005C7B29 /* InfoViewCell.swift */; };
 		11A721CA29BBCD44005C7B29 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A721C929BBCD44005C7B29 /* CircularProgressBar.swift */; };
+		11A721CC29BBE6B0005C7B29 /* ViewController+DataSource .swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A721CB29BBE6B0005C7B29 /* ViewController+DataSource .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		118328F729BA8D8F00C61B99 /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
 		11A721C529BBCC64005C7B29 /* InfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCell.swift; sourceTree = "<group>"; };
 		11A721C929BBCD44005C7B29 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		11A721CB29BBE6B0005C7B29 /* ViewController+DataSource .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+DataSource .swift"; sourceTree = "<group>"; };
 		4A6B0A7A1F31EFBA969317A2 /* Pods_Pills.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pills.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F6E54E213B2BFF05808627 /* Pods-Pills.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pills.debug.xcconfig"; path = "Target Support Files/Pods-Pills/Pods-Pills.debug.xcconfig"; sourceTree = "<group>"; };
 		C954B1204E6C87FE673EDD6D /* Pods-Pills.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pills.release.xcconfig"; path = "Target Support Files/Pods-Pills/Pods-Pills.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 				118328D429B8A4AD00C61B99 /* AppDelegate.swift */,
 				118328D629B8A4AD00C61B99 /* SceneDelegate.swift */,
 				118328FB29BA8F5300C61B99 /* Controller */,
-				118328F929BA8F3300C61B99 /* ViewController+DataSource */,
+				118328F929BA8F3300C61B99 /* ViewController Extensions */,
 				118328FA29BA8F4C00C61B99 /* Model */,
 				118328FC29BA8F8800C61B99 /* View */,
 				118328E029B8A4AF00C61B99 /* Assets.xcassets */,
@@ -89,18 +91,19 @@
 			path = Pills;
 			sourceTree = "<group>";
 		};
-		118328F929BA8F3300C61B99 /* ViewController+DataSource */ = {
+		118328F929BA8F3300C61B99 /* ViewController Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				118328ED29BA86C700C61B99 /* Section.swift */,
-				118328F529BA87A100C61B99 /* Item.swift */,
+				11A721CB29BBE6B0005C7B29 /* ViewController+DataSource .swift */,
 			);
-			path = "ViewController+DataSource";
+			path = "ViewController Extensions";
 			sourceTree = "<group>";
 		};
 		118328FA29BA8F4C00C61B99 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				118328ED29BA86C700C61B99 /* Section.swift */,
+				118328F529BA87A100C61B99 /* Item.swift */,
 				118328F729BA8D8F00C61B99 /* Pill.swift */,
 			);
 			path = Model;
@@ -275,6 +278,7 @@
 			files = (
 				118328EE29BA86C700C61B99 /* Section.swift in Sources */,
 				118328D929B8A4AD00C61B99 /* ViewController.swift in Sources */,
+				11A721CC29BBE6B0005C7B29 /* ViewController+DataSource .swift in Sources */,
 				11A721CA29BBCD44005C7B29 /* CircularProgressBar.swift in Sources */,
 				118328D529B8A4AD00C61B99 /* AppDelegate.swift in Sources */,
 				118328DF29B8A4AD00C61B99 /* Pills.xcdatamodeld in Sources */,

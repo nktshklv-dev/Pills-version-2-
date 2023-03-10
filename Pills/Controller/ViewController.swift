@@ -8,15 +8,21 @@
 import UIKit
 
 class ViewController: UIViewController {
+
+    var dataSource: DataSource!
+    var collectionView: UICollectionView!
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
-    
-    private var dataSource: DataSource!
-    private var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        
+    }
+    
+    private func setupCollectionView(){
+        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: createLayout())
+        view.addSubview(collectionView)
+        collectionView.register(InfoViewCell.self, forCellWithReuseIdentifier: InfoViewCell.identifier)
+        collectionView.dataSource = createDataSource()
         
     }
     
@@ -45,39 +51,6 @@ class ViewController: UIViewController {
             return section
         }
         return layout
-    }
-    
-    private func setupCollectionView(){
-        collectionView = UICollectionView(frame: view.frame, collectionViewLayout: createLayout())
-        view.addSubview(collectionView)
-        collectionView.register(InfoViewCell.self, forCellWithReuseIdentifier: InfoViewCell.identifier)
-        collectionView.dataSource = createDataSource()
-        
-    }
-    
-    private func createDataSource() -> DataSource {
-        dataSource = DataSource(collectionView: collectionView) { collectionView, indexPath, item in
-            switch item.itemView {
-                case .infoView:
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: InfoViewCell.identifier, for: indexPath) as? InfoViewCell else { return nil }
-                return cell
-            case .vaccination: print("Vaccination view")
-                return nil
-            case .pill(Pill(name: "Pill", imageName: "ImageName", description: "Decrp")): print("Pill")
-                return nil
-            default:
-                print("default")
-                return nil
-            }
-        }
-        
-        var snapshot = Snapshot()
-        snapshot.appendSections([.info, .vaccinatedView, .main])
-        snapshot.appendItems([Item(itemView: .infoView)], toSection: .info)
-        snapshot.appendItems([Item(itemView: .vaccination)], toSection: .vaccinatedView)
-        snapshot.appendItems([Item(itemView: .pill(Pill(name: "name", imageName: "imageName", description: "String")))])
-        dataSource.apply(snapshot)
-        return dataSource
     }
 }
 
