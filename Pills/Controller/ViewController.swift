@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            let screenWidth = layoutEnvironment.container.effectiveContentSize.width
+            
             let currentSection = Section(rawValue: sectionIndex)
             let currentSize = currentSection?.getSize()
             let width = currentSize!.0
